@@ -1,0 +1,26 @@
+version: '3'
+services:
+  nginx: # Nginx服务
+    image: cheney/nginx:latest
+    ports:
+      - "80:80"
+    volumes:
+      - /Users/cheney/Documents/docker/nginx/log:/var/log/nginx
+      #   - /Users/cheney/Documents/docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+      #   - /Users/cheney/Documents/docker/nginx/conf.d:/etc/nginx/conf.d
+      #   - /Users/cheney/Documents/docker/nginx/html:/usr/share/nginx/html
+
+  autodeploy: # 自定义NODE服务
+    image:  cheney/autodeploy:latest
+  
+  visualizer: # Docker管理可视化服务
+    image: dockersamples/visualizer:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - "/var/run/docker.sock:/var/run/docker.sock"
+    deploy:
+      placement:
+        constraints: [node.role == manager]
+networks:
+  overlay:
