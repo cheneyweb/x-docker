@@ -10,8 +10,8 @@ services:
       #   - /Users/cheney/Documents/docker/nginx/conf.d:/etc/nginx/conf.d
       #   - /Users/cheney/Documents/docker/nginx/html:/usr/share/nginx/html
 
-  autodeploy: # 自定义NODE服务
-    image:  cheney/autodeploy:latest
+  # autodeploy: # 自定义NODE服务
+  #   image:  cheney/autodeploy:latest
   
   visualizer: # Docker管理可视化服务
     image: dockersamples/visualizer:latest
