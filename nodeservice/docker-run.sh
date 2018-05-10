@@ -1,0 +1,1 @@
+docker run -d -p 3636:3636 cheney/nodeservice

@@ -3,7 +3,7 @@ Docker实战
 
 [构建]
 >
-单镜像构建: docker build -t cheney/project ./
+单镜像构建: docker build -t cheney/project .
 单镜像上传: docker push cheney/project
 多镜像构建: docker-compose up
 
@@ -23,5 +23,6 @@ Docker实战
 【删除】
 >
 删除镜像: docker rmi [imageName]
+彻底清理: docker system prune -a
 删除集群: docker stack rm [serviceName]
 删除机器: docker-machine rm [machineName]

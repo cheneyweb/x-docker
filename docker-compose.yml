@@ -12,10 +12,10 @@ services:
     links:
       - autodeploy
   
-  autodeploy:
-    build: ./autodeploy
+  nodeservice:
+    build: ./nodeservice
     expose:
-      - "10001"
+      - "3636"
   
   # x-grpc:
   #   build: ./x-grpc
